@@ -1,13 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
 .logo {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+.logo h1 {
   font-family: "Lilita One", cursive;
   color: #039723;
   text-align: center;
   text-shadow: 2px 2px 0 black, 2px -2px 0 black, -2px 2px 0 black, -2px -2px 0 black, 2px 0px 0 black, 0px 2px 0 black, -2px 0px 0 black, 0px -2px 0 black, 8px 3px 5px rgba(32, 43, 32, 0.11);
   position: relative;
 }
-.logo span {
-  font-size: 24px;
+.logo h4 {
   color: lightgrey;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
@@ -140,8 +144,11 @@ main {
 }
 
 @media (min-width: 768px) {
-  .logo {
+  .logo h1 {
     font-size: 64px;
+  }
+  .logo h4 {
+    font-size: 32px;
   }
   .score {
     max-width: 50vw;

@@ -1,30 +1,62 @@
 $dark-dollar: #202b20;
 $light-dollar: #455045;
 $dark-green: #002d29;
+$medium-green: #00612d;
 $light-green: green;
+$alert-green: #90ee90;
+$fluor-green: #00af71;
 $red: #820300;
+$alert-red: red;
+$yellow: #f5f374;
 $light-grey: #e5e5e5;
+$medium-grey: #d5d5d5;
+$normal-grey: grey;
 $dark-grey: #312d2c;
 $white: white;
-$border-table: 1px solid grey;
+
+$border: 0.09375rem;
+$border-table: $border solid grey;
 
 .bg-green {
   background-color: $dark-green;
 }
+.bg-green-alert {
+  background-color: $alert-green;
+}
+.bg-green-disclaimer {
+  background-color: $fluor-green;
+}
 .bg-green-light {
   background-color: $light-green;
 }
+.bg-green-medium {
+  background-color: $medium-green;
+}
+.bg-black {
+  background-color: #000;
+}
 .bg-red {
   background-color: $red;
+}
+.bg-yellow {
+  background-color: $yellow;
 }
 
 .bg-grey-light {
   background-color: $light-grey;
 }
+.bg-grey-medium {
+  background-color: $medium-grey;
+}
+.bg-grey-normal {
+  background-color: $normal-grey;
+}
 .bg-grey-dark {
   background-color: $dark-grey;
 }
-
+.bg-alert {
+  background-color: $alert-red;
+}
 .bg-white {
   background-color: $white;
 }
@@ -147,6 +179,9 @@ $spacing-12: 4rem; //64px
     .#{$prefix}-#{$i - 1} {
       #{$property}: $size;
     }
+  }
+  .#{$prefix}-0 {
+    #{$property}: 0;
   }
 }
 

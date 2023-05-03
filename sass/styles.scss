@@ -17,6 +17,9 @@ body {
   box-sizing: border-box;
 }
 
+img {
+  max-width: 1rem;
+}
 .logo {
   display: flex;
   align-items: baseline;
@@ -66,39 +69,23 @@ body {
   background: green;
 }
 
-.titulotabla {
-  text-align: center;
-  font-size: 1em;
-  background: #00612d;
-  color: #fff;
-  border: 0.0625rem solid #000;
+.positions__table {
   width: 100%;
-  text-shadow: 0.0625rem 0.0625rem 0.0625rem #000;
-}
-.tablesorter1 {
-  font-size: 1rem;
-  width: 100%;
-  text-align: center;
-  background: #797979;
-  tr {
-    &:nth-child(2n) {
-      background: #e5e5e5;
-    }
-    &:nth-child(2n + 1) {
-      background: #d5d5d5;
-    }
-    &:first-of-type {
-      background: #90ee90;
-    }
-    td {
-      overflow: hidden;
-      text-overflow: clip;
-      white-space: nowrap;
-      &.cp1 {
-        background: green;
-        color: #fff;
+  border-spacing: $border;
+  background-color: $normal-grey;
+  tbody {
+    tr {
+      td {
+        overflow: hidden;
+        text-overflow: clip;
+        white-space: nowrap;
+        font-size: 0.875rem;
+        font-weight: 700;
       }
     }
+  }
+  img {
+    border: 1px solid black;
   }
 }
 

@@ -29,7 +29,7 @@ export default {
                   </div>
                 </div>
                 <div class="flex axis-center bg-white score__updated">
-                  <p class="mb-0 mt-0 light text-md">
+                  <p class="mb-0 mt-0 light text-md pt-1 pb-1">
                     <span class="text-red mr-1 bold">{{ formatDate(updated) }}</span>Última actualización
                   </p>
                 </div>
@@ -51,10 +51,10 @@ export default {
         updated = `Viernes`;
       }
 
-      if (hour >= 9 && hour <= 18) {
+      if (hour >= 9 && hour < 18) {
         updated = `${hour}:${date.getMinutes()}`;
-      } else if (hour > 18) {
-        updated = `18:00`;
+      } else if (hour >= 18) {
+        updated = '18:00';
       }
       return updated;
     },
@@ -68,7 +68,7 @@ export default {
 
       if (
         hora >= 9 &&
-        hora <= 18 &&
+        hora < 18 &&
         fechaActual.getDay() >= 1 &&
         fechaActual.getDay() <= 5
       ) {

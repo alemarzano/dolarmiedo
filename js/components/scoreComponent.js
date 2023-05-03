@@ -1,47 +1,39 @@
 export default {
-  template: `<div class="score__cotizacion">
-  <table cellspacing="0">
-    <tbody>
-      <tr class="score__cotizacion--header">
-        <td colspan="6">
-          <div>
-            <img :src="'img/dolar_' + icon + '.svg'" />
-            <span>DOLAR {{title}}</span>
-            <img :src="'img/dolar_' + icon + '.svg'" />
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="score__cotizacion--time" :class="{  active: esHoraActiva, final: !esHoraActiva }">
-        <span>{{mostrarHora()}}</span>
-        <img v-if="esHoraActiva" src="img/ar.png" alt="" />
-        </td>
-        <td class="score__cotizacion--operation">
-          <img src="img/comprar.svg" /><br /><span>Compra</span>
-        </td>
-        <td class="score__cotizacion--result">
-          <div class="rojas1" id="roj1_1_196"></div>
-          <span > {{ buy }} </span>
-        </td>
-        <td class="score__cotizacion--result">
-          <span> {{ sell }} </span>
-          <div class="rojas2" id="roj2_1_196"></div>
-        </td>
-        <td class="score__cotizacion--operation">
-          <img src="img/vender.svg" /><br /><span>Venta</span>
-        </td>
-        <td class="game-info" id="for_1_196"></td>
-      </tr>
-      <tr class="score__cotizacion--lastUpdated">
-        <td colspan="6" id="g2_1_196">
-          <span id="timeUpdated">{{ formatDate(updated) }}</span>
-          Última actualización
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-`,
+  template: `<div class="score flex column mb-3">
+                <div class="score__header bg-green flex axis-center pt-1 pb-1">
+                  <img :src="'img/dolar_' + icon + '.svg'" />
+                  <span class="ml-1 mr-1 text-white">DOLAR OFICIAL</span>
+                  <img :src="'img/dolar_' + icon + '.svg'" />
+                </div>
+                <div class="score__data">
+                  <div class="flex axis-center wrap pb-3 pt-3" :class="{  'bg-red': esHoraActiva, 'bg-grey-dark': !esHoraActiva }">
+                    <span class="text-white text-md mr-1">{{mostrarHora()}}</span>
+                    <img v-if="esHoraActiva" src="img/ar.png" alt="" />
+                  </div>
+                  <div class="flex column axis-center bg-grey-light pt-1">
+                    <img src="/img/comprar.svg" alt="" />
+                    <span class="text-md bold">Compra</span>
+                  </div>
+                  <div class="flex axis-center bg-white">
+                    <span class="bold">{{ buy }}</span>
+                  </div>
+                  <div class="flex axis-center bg-white">
+                    <span class="bold">{{ sell }}</span>
+                  </div>
+                  <div class="flex column axis-center bg-grey-light pt-1">
+                    <img src="/img/vender.svg" alt="" />
+                    <span class="text-md bold">Venta</span>
+                  </div>
+                  <div class="bg-green-light flex axis-center">
+                    <span class="text-md text-white">Info</span>
+                  </div>
+                </div>
+                <div class="flex axis-center bg-white score__updated">
+                  <p class="mb-0 mt-0 light text-md">
+                    <span class="text-red mr-1 bold">{{ formatDate(updated) }}</span>Última actualización
+                  </p>
+                </div>
+              </div>`,
   props: ['title', 'icon', 'buy', 'sell', 'updated', 'coinQuote'],
   data() {
     return {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -78,20 +78,19 @@
         <h4>.netlify.app</h4>
       </div>
     </header>
-    <main id="app">
-      <div class="container">
-        <div class="score">
-          <score
-            v-for="(value, key) in coinQuotes"
-            :key="key"
-            :title="key"
-            :icon="key"
-            :buy="value.value_buy"
-            :sell="value.value_sell"
-            :updated="value.last_update"
-            :coin-quote="value"
-          ></score>
-        </div>
+    <main id="app" class="flex column align-center pr-3 pl-3">
+      <div class="container flex column align-center">
+        <score
+          v-for="(value, key) in coinQuotes"
+          :key="key"
+          :title="key"
+          :icon="key"
+          :buy="value.value_buy"
+          :sell="value.value_sell"
+          :updated="value.last_update"
+          :coin-quote="value"
+        ></score>
+        <br />
       </div>
     </main>
     <!-- <script type="module" src="js/index.js"></script> -->

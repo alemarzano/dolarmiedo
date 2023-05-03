@@ -79,17 +79,19 @@
       </div>
     </header>
     <main id="app">
-      <div class="score">
-        <score
-          v-for="(value, key) in coinQuotes"
-          :key="key"
-          :title="key"
-          :icon="key"
-          :buy="value.value_buy"
-          :sell="value.value_sell"
-          :updated="value.last_update"
-          :coin-quote="value"
-        ></score>
+      <div class="container">
+        <div class="score">
+          <score
+            v-for="(value, key) in coinQuotes"
+            :key="key"
+            :title="key"
+            :icon="key"
+            :buy="value.value_buy"
+            :sell="value.value_sell"
+            :updated="value.last_update"
+            :coin-quote="value"
+          ></score>
+        </div>
       </div>
     </main>
     <!-- <script type="module" src="js/index.js"></script> -->

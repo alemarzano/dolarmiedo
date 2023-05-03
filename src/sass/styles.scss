@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 
+$darkGreen: #202b20;
+$dollarGreen: #455045;
+
 .logo {
   display: flex;
   align-items: baseline;
@@ -8,9 +11,10 @@
     font-family: 'Lilita One', cursive;
     color: #039723;
     text-align: center;
-    text-shadow: 2px 2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
-      -2px -2px 0 black, 2px 0px 0 black, 0px 2px 0 black, -2px 0px 0 black,
-      0px -2px 0 black, 8px 3px 5px rgba(32, 43, 32, 0.11);
+    text-shadow: 0.125rem 0.125rem 0 black, 0.125rem -0.125rem 0 black,
+      -0.125rem 0.125rem 0 black, -0.125rem -0.125rem 0 black,
+      0.125rem 0px 0 black, 0px 0.125rem 0 black, -0.125rem 0px 0 black,
+      0px -0.125rem 0 black, 8px 3px 5px rgba(32, 43, 32, 0.11);
     position: relative;
   }
   h4 {
@@ -21,10 +25,10 @@
 
 body {
   margin: auto;
-  background-color: #202b20;
+  background-color: $darkGreen;
   opacity: 1;
-  background-image: radial-gradient(#455045 0.55px, #202b20 0.55px);
-  background-size: 11px 11px;
+  background-image: radial-gradient($dollarGreen 1px, $darkGreen 1px);
+  background-size: 1rem 1rem;
   font-family: Roboto, sans-serif, Arial, Helvetica;
   text-size-adjust: none;
   -webkit-text-size-adjust: none;
@@ -37,16 +41,18 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .score {
   width: 100%;
-  padding: 0 16px;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
   &__cotizacion {
-    font-size: 0.7em;
+    font-size: 0.7rem;
     text-align: center;
     background: #85a094;
-    margin-top: 10px;
+    margin-top: 0.5rem;
     table {
       width: 100%;
       text-align: center;
@@ -61,18 +67,19 @@ main {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 2px;
+        padding: 0.125rem;
         span {
           text-align: center;
           color: #fff;
-          font-size: 1.3em;
+          font-size: 1rem;
+          text-transform: uppercase;
           text-decoration: none;
-          text-shadow: 1px 1px 1px #000;
+          text-shadow: 0.0625rem 0.0625rem 0.0625rem #000;
           font-weight: 700;
         }
         img {
-          margin: 0 4px;
-          height: 16px;
+          margin: 0 0.25rem;
+          height: 1rem;
           max-width: 100%;
         }
       }
@@ -83,7 +90,7 @@ main {
       color: #fff;
       font-size: 1.1em;
       font-weight: 700;
-      text-shadow: 1px 1px 1px #000;
+      text-shadow: 0.0625rem 0.0625rem 0.0625rem #000;
       &.active {
         background: #820300;
       }
@@ -101,28 +108,28 @@ main {
       overflow: hidden;
       text-overflow: clip;
       line-height: 1.1em;
-      font-size: 13.5px;
+      font-size: 0.75rem;
       font-weight: 700;
       img {
-        width: 15px;
+        width: 1rem;
       }
     }
     &--result {
       width: 7%;
       background: #fff;
-      font-size: 1.6em;
+      font-size: 1.5em;
       font-weight: 700;
     }
     &--lastUpdated {
-      font-size: 10px;
+      font-size: 0.75rem;
       font-weight: 300;
       background: #fff;
       border-spacing: 0;
       text-align: center;
-      -webkit-border-horizontal-spacing: 2px;
-      -webkit-border-vertical-spacing: 2px;
+      -webkit-border-horizontal-spacing: 0.125rem;
+      -webkit-border-vertical-spacing: 0.125rem;
       td {
-        padding: 2px;
+        padding: 0.125rem;
       }
       span {
         color: #b34;
@@ -137,26 +144,53 @@ main {
   background: green;
 }
 
-.rojas1 {
-  width: 5px;
-  float: left;
+.titulotabla {
+  text-align: center;
+  font-size: 1em;
+  background: #00612d;
+  color: #fff;
+  border: 0.0625rem solid #000;
+  width: 100%;
+  text-shadow: 0.0625rem 0.0625rem 0.0625rem #000;
 }
-
-.rojas2 {
-  width: 5px;
-  float: right;
+.tablesorter1 {
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
+  background: #797979;
+  tr {
+    &:nth-child(2n) {
+      background: #e5e5e5;
+    }
+    &:nth-child(2n + 1) {
+      background: #d5d5d5;
+    }
+    &:first-of-type {
+      background: #90ee90;
+    }
+    td {
+      overflow: hidden;
+      text-overflow: clip;
+      white-space: nowrap;
+      &.cp1 {
+        background: green;
+        color: #fff;
+      }
+    }
+  }
 }
 
 @media (min-width: 768px) {
   .logo {
     h1 {
-      font-size: 64px;
+      font-size: 4rem;
     }
     h4 {
-      font-size: 32px;
+      font-size: 2rem;
     }
   }
-  .score {
+  .score,
+  .positions {
     max-width: 50vw;
   }
 }

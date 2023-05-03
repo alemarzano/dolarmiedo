@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 
-$darkGreen: #202b20;
-$dollarGreen: #455045;
+@import './helpers';
 
 body {
   margin: auto;
-  background-color: $darkGreen;
+  background-color: $dark-dollar;
   opacity: 1;
-  background-image: radial-gradient($dollarGreen 1px, $darkGreen 1px);
+  background-image: radial-gradient($light-dollar 1px, $dark-dollar 1px);
   background-size: 1rem 1rem;
   font-family: Roboto, sans-serif, Arial, Helvetica;
   text-size-adjust: none;
@@ -15,6 +14,7 @@ body {
   -moz-text-size-adjust: none;
   -ms-text-size-adjust: none;
   height: 100vh;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -38,110 +38,27 @@ body {
   }
 }
 
-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.score {
+  width: 100%;
+  &__header,
+  &__updated {
+    border: $border-table;
   }
-  .score {
-    width: 100%;
-    padding: 0 1rem;
-    margin-bottom: 2rem;
-    &__cotizacion {
-      font-size: 0.7rem;
-      text-align: center;
-      background: #85a094;
-      margin-top: 0.5rem;
-      table {
-        width: 100%;
-        text-align: center;
-        border-spacing: 1.5px;
-        table-layout: fixed;
-      }
-      &--header {
-        width: 100%;
-        background: #002d29;
-
-        div {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 0.125rem;
-          span {
-            text-align: center;
-            color: #fff;
-            font-size: 1rem;
-            text-transform: uppercase;
-            text-decoration: none;
-            text-shadow: 0.0625rem 0.0625rem 0.0625rem #000;
-            font-weight: 700;
-          }
-          img {
-            margin: 0 0.25rem;
-            height: 1rem;
-            max-width: 100%;
-          }
-        }
-      }
-      &--time {
-        width: 15%;
-        background: #155219;
-        color: #fff;
-        font-size: 1.1em;
-        font-weight: 700;
-        text-shadow: 0.0625rem 0.0625rem 0.0625rem #000;
-        &.active {
-          background: #820300;
-        }
-        &.final {
-          background: #312d2c;
-        }
-        img {
-          width: 17px;
-        }
-      }
-      &--operation {
-        width: 30%;
-        background: #e5e5e5;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: clip;
-        line-height: 1.1em;
-        font-size: 0.75rem;
-        font-weight: 700;
-        img {
-          width: 1rem;
-        }
-      }
-      &--result {
-        width: 7%;
-        background: #fff;
-        font-size: 1.5em;
-        font-weight: 700;
-      }
-      &--lastUpdated {
-        font-size: 0.75rem;
-        font-weight: 300;
-        background: #fff;
-        border-spacing: 0;
-        text-align: center;
-        -webkit-border-horizontal-spacing: 0.125rem;
-        -webkit-border-vertical-spacing: 0.125rem;
-        td {
-          padding: 0.125rem;
-        }
-        span {
-          color: #b34;
-          font-weight: 700;
-        }
-      }
+  &__data {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    border-left: $border-table;
+    > div {
+      border-right: $border-table;
     }
   }
+  img {
+    max-width: 1rem;
+  }
+}
+
+.container {
+  width: 100%;
 }
 
 .game-info {
@@ -195,6 +112,6 @@ main {
     }
   }
   .container {
-    max-width: 45rem;
+    max-width: 34rem;
   }
 }

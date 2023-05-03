@@ -1,0 +1,158 @@
+$dark-dollar: #202b20;
+$light-dollar: #455045;
+$dark-green: #002d29;
+$light-green: green;
+$red: #820300;
+$light-grey: #e5e5e5;
+$dark-grey: #312d2c;
+$white: white;
+$border-table: 1px solid grey;
+
+.bg-green {
+  background-color: $dark-green;
+}
+.bg-green-light {
+  background-color: $light-green;
+}
+.bg-red {
+  background-color: $red;
+}
+
+.bg-grey-light {
+  background-color: $light-grey;
+}
+.bg-grey-dark {
+  background-color: $dark-grey;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+.text-white {
+  color: $white;
+  font-weight: 700;
+  text-shadow: 0.0625rem 0.0625rem 0.0625rem #000;
+}
+
+.text-red {
+  color: $red;
+}
+
+.text-md {
+  font-size: 0.75rem;
+}
+
+.bold {
+  font-weight: 700 !important;
+}
+
+/*  Custom Flexbox Helper Classes */
+
+.flex {
+  display: flex;
+
+  &.cell {
+    flex: 1;
+  }
+
+  &.equal-sizing {
+    > * {
+      flex-basis: 0;
+      flex-grow: 1;
+    }
+  }
+
+  &.column {
+    flex-direction: column;
+  }
+
+  &.row {
+    flex-direction: row;
+  }
+
+  &.wrap {
+    flex-flow: row wrap;
+  }
+
+  &.justify-start {
+    justify-content: flex-start;
+  }
+  &.justify-end {
+    justify-content: flex-end;
+  }
+  &.justify-center {
+    justify-content: center;
+  }
+  &.justify-between {
+    justify-content: space-between;
+  }
+  &.justify-around {
+    justify-content: space-around;
+  }
+  &.justify-evenly {
+    justify-content: space-evenly;
+  }
+  &.align-top {
+    align-items: flex-start;
+  }
+  &.align-bottom {
+    align-items: flex-end;
+  }
+  &.align-center {
+    align-items: center;
+  }
+  &.align-baseline {
+    align-items: baseline;
+  }
+  &.align-stretch {
+    align-items: stretch;
+  }
+  &.axis-center {
+    justify-content: center;
+    align-items: center;
+  }
+} // end flexbox helpers
+
+$spacing-min: 0.0625rem; //1px
+$spacing-1: 0.125rem; //2px
+$spacing-2: 0.25rem; //4px
+$spacing-3: 0.5rem; //8px
+$spacing-4: 0.75rem; //12px
+$spacing-5: 1rem; //16px
+$spacing-6: 1.25rem; //20px
+$spacing-7: 1.5rem; //24px
+$spacing-8: 1.75rem; //28px
+$spacing-9: 2rem; //32px
+$spacing-9: 2.5rem; //40px
+$spacing-10: 3rem; //48px
+$spacing-11: 3.5rem; //56px
+$spacing-12: 4rem; //64px
+
+@mixin generate($prefix, $property) {
+  // List of sizes to generate for each
+
+  $sizes: ($spacing-1, $spacing-2, $spacing-3, $spacing-4, $spacing-5);
+
+  // Loop through all of the sizes(we use @for rather than @each, as we want access to the index)
+  @for $i from 1 through length($sizes) {
+    // Get the size for the current index
+    $size: nth($sizes, $i);
+
+    // Create the rule
+    .#{$prefix}-#{$i - 1} {
+      #{$property}: $size;
+    }
+  }
+}
+
+@include generate(m, margin);
+@include generate(ml, margin-left);
+@include generate(mr, margin-right);
+@include generate(mt, margin-top);
+@include generate(mb, margin-bottom);
+@include generate(p, padding);
+@include generate(pl, padding-left);
+@include generate(pr, padding-right);
+@include generate(pt, padding-top);
+@include generate(pb, padding-bottom);

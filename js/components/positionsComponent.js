@@ -1,5 +1,5 @@
 const D_OFICIAL = 'Dolar Junior';
-const D_BLUE = 'Dolar Chelsa';
+const D_BLUE = 'Dolar Chelsea';
 
 const billetesNacionales = [
   { nombre: 'Hornero', pesos: 1000 },

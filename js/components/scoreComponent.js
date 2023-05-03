@@ -2,7 +2,7 @@ export default {
   template: `<div class="score flex column mb-3">
                 <div class="score__header bg-green flex axis-center pt-1 pb-1">
                   <img :src="'img/dolar_' + icon + '.svg'" />
-                  <span class="ml-1 mr-1 text-white">DOLAR OFICIAL</span>
+                  <span class="ml-1 mr-1 text-white uppercase">DOLAR {{title}}</span>
                   <img :src="'img/dolar_' + icon + '.svg'" />
                 </div>
                 <div class="score__data">

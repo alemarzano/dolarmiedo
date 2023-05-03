@@ -1,4 +1,5 @@
-import { coinQuotes } from './api.js';
+const D_OFICIAL = 'Dolar Junior';
+const D_BLUE = 'Dolar Chelsa';
 
 const billetesNacionales = [
   { nombre: 'Hornero', pesos: 1000 },
@@ -6,8 +7,8 @@ const billetesNacionales = [
   { nombre: 'Ballena FA', pesos: 200 },
   { nombre: 'El Cóndor de los Andes', pesos: 50 },
   { nombre: 'Guanaco', pesos: 20 },
-  { nombre: 'Dolar Junior', pesos: null },
-  { nombre: 'Dolar Blue', pesos: null },
+  { nombre: D_OFICIAL, pesos: null },
+  { nombre: D_BLUE, pesos: null },
 ];
 export default {
   data() {
@@ -54,9 +55,9 @@ export default {
     },
     getImage(billete) {
       switch (billete.nombre) {
-        case 'Dolar Junior':
+        case D_OFICIAL:
           return 'img/oficial.jpg';
-        case 'Dolar Blue':
+        case D_BLUE:
           return 'img/blue.jpg';
         default:
           return `img/${billete.pesos}.jpg`;

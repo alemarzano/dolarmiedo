@@ -25,7 +25,7 @@ export default {
                     <span class="text-md bold">Venta</span>
                   </div>
                   <div class="bg-green-light flex axis-center">
-                    <span class="text-md text-white">Info</span>
+                    <span class="text-md text-white"></span>
                   </div>
                 </div>
                 <div class="flex axis-center bg-white score__updated">

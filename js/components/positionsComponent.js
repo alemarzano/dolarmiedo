@@ -77,7 +77,7 @@ export default {
     <table id="positions" class="positions__table">
       <thead class="bg-black">
         <tr class="text-white bg-green-medium">
-          <th colspan="3"><p class="m-0 pt-1 pb-1">Tabla Puntos</p></th>
+          <th colspan="3"><p class="m-0 pt-1 pb-1">Posiciones</p></th>
         </tr>
       </thead>
       <thead class="bg-grey-normal">

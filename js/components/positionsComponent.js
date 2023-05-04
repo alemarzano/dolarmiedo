@@ -5,6 +5,7 @@ const billetesNacionales = [
   { nombre: 'Hornero', pesos: 1000 },
   { nombre: 'Yaguareté', pesos: 500 },
   { nombre: 'Ballena FA', pesos: 200 },
+  { nombre: 'Taru CA', pesos: 100 },
   { nombre: 'El Cóndor de los Andes', pesos: 50 },
   { nombre: 'Guanaco', pesos: 20 },
   { nombre: D_OFICIAL, pesos: null },
@@ -27,8 +28,10 @@ export default {
   },
   methods: {
     updateData() {
-      this.billetes[5].pesos = this.dolarJunior;
-      this.billetes[6].pesos = this.dolarBlue;
+      const last = this.billetes.length - 1;
+      const prelast = last - 1;
+      this.billetes[prelast].pesos = this.dolarJunior;
+      this.billetes[last].pesos = this.dolarBlue;
       this.billetes.sort((a, b) => {
         return b.pesos - a.pesos;
       });
